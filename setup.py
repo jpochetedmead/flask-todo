@@ -7,9 +7,9 @@ with open("README.md", "r") as f:
 setuptools.setup(
     name="flasktodo",
     version="0.0.1",
-    author="Zach Fedor",
-    author_email="zachfedor@gmail.com",
-    url="https://github.com/ts-cset/flask-todo",
+    author="Julio Pochet & Nathan Weiler",
+    author_email="jrpochetedmead192@stevenscollege.edu | njweiler192@stevenscollege.edu",
+    url="https://github.com/jpochetedmead/flask-todo",
     description="A simple to-do application",
     long_description=long_description,
     long_description_content_type="text/markdown",
@@ -18,4 +18,3 @@ setuptools.setup(
     tests_require=['pytest'],
     python_requires='>=3.6',
 )
-

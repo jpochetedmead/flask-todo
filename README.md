@@ -59,3 +59,7 @@ You should be able to view the app at [http://localhost:5000]().
 
 If you've forked this repo, you can deploy your code by clicking the button above.
 
+
+## Collaborators:
+Julio Pochet Edmead
+Nathan Weiler

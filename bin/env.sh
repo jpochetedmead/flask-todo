@@ -8,4 +8,3 @@
 
 export FLASK_APP=flasktodo
 export FLASK_ENV=development
-

@@ -21,4 +21,3 @@ psql postgres -c 'GRANT ALL PRIVILEGES ON DATABASE "flasktodo" to flasktodo_user
 # create test database and grant access to application user
 psql postgres -c 'CREATE DATABASE flasktodo_test;'
 psql postgres -c 'GRANT ALL PRIVILEGES ON DATABASE "flasktodo_test" to flasktodo_user;'
-

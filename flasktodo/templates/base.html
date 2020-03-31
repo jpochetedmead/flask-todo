@@ -1,13 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-
+    <!-- Character Encoding -->
+    <meta charset="utf-8">
+    <!-- Meta for Microsoft Edge Browser -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- @media Breakpoints -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Search Engines Algorithms -->
+    <meta name="author" content="Julio Pochet Edmead">
+    <meta name="description" content="Flask To-Do App for the class CSET-160: Web Development II "/>
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon_io-1/favicon.ico') }}" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static', filename='favicon_io-1/apple-touch-icon.png') }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='favicon_io-1/favicon-32x32.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ url_for('static', filename='favicon_io-1/favicon-16x16.png') }}">
+    <link rel="manifest" href="{{ url_for('static', filename='favicon_io-1/site.webmanifest') }}">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
+    <!-- CSS stylesheet -->
+    <link rel="stylesheet" href="{{ url_for("static", filename="style.css") }}">
     <title>{% block title %}My To-Dos{% endblock %}</title>
-
-    <link rel="stylesheet" href="{{ url_for("static", filename="style.css") }}" type="text/css" />
-  </head>
+    </head>
   <body>
     {% block content %}
     {% endblock %}

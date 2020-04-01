@@ -20,10 +20,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
     <!-- CSS stylesheet -->
     <link rel="stylesheet" href="{{ url_for("static", filename="style.css") }}">
-    <title>{% block title %}My To-Dos{% endblock %}</title>
+    <title>{% block title %}ImNext{% endblock %} - A simple to-do app.</title>
     </head>
   <body>
+    <section class="todoapp">
     {% block content %}
     {% endblock %}
+    <footer class="footer">
+      <marquee><span>©Copyright &nbsp;<time datetime='2020-03-31 22:05-0800'>2020</time>&nbsp;by Julio Pochet Edmead. All rights reserved.</span></marquee>
+    </footer>
+    </section>
   </body>
 </html>

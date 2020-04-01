@@ -1,13 +1,21 @@
 {% extends 'base.html' %}
 
 {% block content %}
-  <h1>A simple to-do application</h1>
+  <!-- <section class="todoapp"> -->
+    <header class="header">
+      <h1>Im Next</h1>
+      <input class="new-todo" placeholder="What needs to be done?"
+        autofocus="" onkeypress="addItem(event)">
+    </header>
 
-  <ul>
-    {% for todo in todos %}
-      <li class="{{ "completed" if todo['completed'] }}">
-        {{ todo['description'] }}
-      </li>
-    {% endfor %}
-  </ul>
+    <section class="main">
+      <ul class="todo-list">
+        {% for todo in todos %}
+        <li class="{{ "completed" if todo['completed'] }}">
+          {{ todo['description'] }}
+        </li>
+      {% endfor %}
+      </ul>
+    </section>
+  <!-- </section> -->
 {% endblock %}

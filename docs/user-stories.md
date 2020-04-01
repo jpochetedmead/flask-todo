@@ -1,10 +1,13 @@
 # User Stories
+[X] = Done.
+[o] = Working on it.
+[ ] = Not Started.
 
 - [X] As a user, I want to see a list of my to-do items to know what to work on.
-- [ ] As a user, I want to submit a form to add new items to my list.
+- [o] As a user, I want to submit a form to add new items to my list.
 - [ ] As a user, I want to filter the list of items to see completed tasks, uncompleted tasks, or all tasks.
-- [ ] As a user, I want to click a button to mark an item as done.
+- [o] As a user, I want to click a button to mark an item as done.
 - [ ] As a user, I want to delete a task in case I don't need to do it anymore.
 - [ ] As a user, I want to edit a task description so I can change what I already entered.
-- [ ] As an anonymous user, I want to register with an email and password so that I can login.
+- [o] As an anonymous user, I want to register with an email and password so that I can login.
 - [ ] As a logged in user, I want to see only my tasks to keep them private.

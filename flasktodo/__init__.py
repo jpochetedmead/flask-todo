@@ -4,7 +4,6 @@ from flask import Flask
 
 def create_app(test_config=None):
     """Factory to configure and return a Flask application.
-
     Keyword arguments:
     test_config -- dictionary to configure the app for tests (default None)
     """
@@ -48,4 +47,3 @@ def create_app(test_config=None):
 
     # Return application object to be used by a WSGI server, like gunicorn
     return app
-

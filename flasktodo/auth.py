@@ -31,8 +31,8 @@ def register():
             cur.execute(
                 '''INSERT INTO users (email, password)
                  VALUES (%s, %s)''',
-                (email, generate_password_hash(password))
-            )
+                 (email, generate_password_hash(password, method='pbkdf2:sha256', salt_length=8))
+                 )
             g.db.commit()
             cur.close()
             return redirect(url_for('auth.login'))

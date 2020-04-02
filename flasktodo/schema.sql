@@ -12,7 +12,7 @@ DROP TABLE IF EXISTS users;
 CREATE TABLE users (
   id bigserial PRIMARY KEY,
   email varchar(50) UNIQUE NOT NULL,
-  password varchar(50) NOT NULL
+  password varchar(200) NOT NULL
 );
 -- To-Do Items
 CREATE TABLE todos (

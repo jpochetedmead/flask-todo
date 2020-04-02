@@ -5,7 +5,6 @@
 {% endblock %}
 
 {% block content %}
-  <!-- <section class="todoapp"> -->
     <header class="header">
       <h1>Im Next</h1>
         <form class="new-todo" method="post" action='/add'>
@@ -13,6 +12,12 @@
           <!-- <input type="submit" name="addButton" value="Add"> -->
         </form>
     </header>
+
+    <section class="actions">
+      <button type="button" onclick="alert('Edit then press Enter.')">EDIT</button>
+      <button type="button" onclick="alert('Marked as Completed')">MARK AS COMPLETED</button>
+      <button type="button" onclick="alert('Deleted!')">DELETE</button>
+    </section>
 
     <section class="main">
       <ul class="todo-list">
@@ -24,5 +29,4 @@
       {% endfor %}
       </ul>
     </section>
-  <!-- </section> -->
 {% endblock %}

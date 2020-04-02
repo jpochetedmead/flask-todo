@@ -10,16 +10,16 @@ DROP TABLE IF EXISTS todos;
 DROP TABLE IF EXISTS users;
 -- Add query to create users table here
 CREATE TABLE users (
-  user_id integer PRIMARY KEY,
+  id bigserial PRIMARY KEY,
   email varchar(50) UNIQUE NOT NULL,
   password varchar(50) NOT NULL
 );
 -- To-Do Items
 CREATE TABLE todos (
-    id bigserial PRIMARY KEY,
-    description varchar(140) NOT NULL,
-    completed boolean NOT NULL,
-    created_at timestamp with time zone NOT NULL,
-    -- Add Foreign Key to users table here
-    user_id integer REFERENCES users(user_id)
+  id bigserial PRIMARY KEY,
+  description varchar(140) NOT NULL,
+  completed boolean NOT NULL,
+  created_at timestamp with time zone NOT NULL,
+  -- Add Foreign Key to users table here
+  user_id bigint REFERENCES users(id)
 );

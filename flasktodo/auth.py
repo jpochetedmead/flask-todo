@@ -18,37 +18,23 @@ bp = Blueprint('auth', __name__, url_prefix='/auth')
 @bp.route('/register', methods=('GET', 'POST'))
 def register():
     if request.method == 'POST':
-        name = request.form['name']
-        username = request.form['username']
         email = request.form['email']
         password = request.form['password']
         db = get_db()
         error = None
 
-        if not username:
-            error = 'Username is required.'
+        if not email:
+            error = 'Email is required.'
         elif not password:
             error = 'Password is required.'
-        elif not name:
-            error = 'Name is required.'
-        elif not email:
-            error = 'Email is required.'
         elif db.execute(
-            'SELECT id FROM user WHERE username = ?', (username,)
-            ).fetchone() is not None:
-            error = 'User {} is already registered.'.format(username)
-        elif db.execute(
-            'SELECT id FROM user WHERE name = ?', (name,)
-            ).fetchone() is not None:
-            error = 'Name {} is already registered.'.format(name)
-        elif db.execute(
-            'SELECT id FROM user WHERE email = ?', (email,)
+            'SELECT id FROM users WHERE email = ?', (email,)
             ).fetchone() is not None:
             error = 'Email {} is already registered.'.format(email)
         if error is None:
             db.execute(
-                'INSERT INTO user (name, username, email, password) VALUES (?, ?, ?, ?)',
-                (name, username, email, generate_password_hash(password)) # generate_password_hash() is used to securely hash the password, and that hash is stored.
+                'INSERT INTO users (email, password) VALUES (?, ?)',
+                (email, generate_password_hash(password)) # generate_password_hash() is used to securely hash the password, and that hash is stored.
             )
             db.commit() # Since this query modifies data, db.commit() needs to be called afterwards to save the changes.
             return redirect(url_for('auth.login')) # redirect() generates a redirect response to the generated URL.
@@ -61,28 +47,24 @@ def register():
 @bp.route('/login', methods=('GET', 'POST'))
 def login():
     if request.method == 'POST':
-        username = request.form['username']
-        password = request.form['password']
         email = request.form['email']
+        password = request.form['password']
         db = get_db()
         error = None
-        user = db.execute(
-            'SELECT * FROM user WHERE username = ?', (username,)
-        ).fetchone()
         email = db.execute(
-            'SELECT * FROM user WHERE email = ?', (email,)
+            'SELECT * FROM users WHERE email = ?', (email,)
         ).fetchone()
 
-        if user is None or email is None:
-            error = 'Incorrect Username or Email.'
+        if email is None:
+            error = 'Incorrect Email.'
             # check_password_hash() hashes the submitted password in the same way as the stored hash and securely compares them. If they match, the password is valid.
 
-        elif not check_password_hash(user['password'], password):
+        elif not check_password_hash(users['password'], password):
             error = 'Incorrect password. Try again.'
 
         if error is None:
             session.clear()
-            session['user_id'] = user['id']
+            session['user_id'] = users['id']
             return redirect(url_for('index'))
 
         flash(error)
@@ -100,7 +82,7 @@ def load_logged_in_user():
         g.user = None
     else:
         g.user = get_db().execute(
-            'SELECT * FROM user WHERE id = ?', (user_id,)
+            'SELECT * FROM users WHERE id = ?', (user_id,)
         ).fetchone()
 
 # To log out, you need to remove the user id from the session. Then load_logged_in_user won’t load a user on subsequent requests.

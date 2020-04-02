@@ -1,14 +1,14 @@
 {% extends 'base.html' %}
 
 {% block header %}
-  <h1>{% block title %}Register{% endblock %}</h1>
+  {% block title %}Register{% endblock %}
 {% endblock %}
 
 {% block content %}
 
-<h1>Sign Up!</h1>
+<h1>Register!</h1>
   <div class="flash">{{ message }}</div>
-{% endfor %}
+
 
   <br>
   <form method="post">

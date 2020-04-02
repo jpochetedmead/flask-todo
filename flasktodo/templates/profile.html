@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block header %}
+  {% if g.user %}
+  {% block title %}Your Profile{% endblock %}
+  {% else %}
+  Profile
+  {% endif %}
+{% endblock %}
+
+{% block content %}
+<br>
+  <form method="post">
+    <label for="email">Email</label>
+    <input name="email" id="email" required>
+    <label for="password">Password</label>
+    <input type="password" name="password" id="password" minlength="8" required>
+    <input type="submit" value="Log In">
+  </form>
+  <br>
+  <hr>
+  <br>
+  <a class="center" href="{{ url_for('todos.index') }}">Return to Home Page</a>
+  <br>
+{% endblock %}

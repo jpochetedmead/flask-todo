@@ -37,6 +37,11 @@ def add():
 
     return render_template("index.html", todos=todos)
 
+
+@bp.route('/profile', methods=('GET', 'POST'))
+def profile():
+    return render_template("profile.html")
+
 #######################################################################################
 #Each request to the RESTful system commonly uses these 4 HTTP verbs:
 #GET: Get a specific resource or a collection of resources

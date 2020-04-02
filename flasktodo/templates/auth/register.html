@@ -7,7 +7,7 @@
 {% block content %}
 
 <h1>Register!</h1>
-  <div class="flash">{{ message }}</div>
+  <div>{{ message }}</div>
 
 
   <br>
@@ -18,4 +18,7 @@
     <input type="password" name="password" id="password" minlength="8" required>
     <input type="submit" value="Register">
   </form>
+
+  <a class="center" href="{{ url_for('todos.index') }}">Back to Home Page</a>
+
 {% endblock %}

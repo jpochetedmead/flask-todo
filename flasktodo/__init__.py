@@ -42,8 +42,10 @@ def create_app(test_config=None):
 
     # Register Routes
     # ---------------
-    from . import todos, auth
+    from . import todos
     app.register_blueprint(todos.bp)
+
+    from . import auth
     app.register_blueprint(auth.bp)
 
     # Return application object to be used by a WSGI server, like gunicorn

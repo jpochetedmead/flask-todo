@@ -1,18 +1,25 @@
 {% extends 'base.html' %}
 
+{% block header %}
+  {% block title %}A Simple To-Do App.{% endblock %}
+{% endblock %}
+
 {% block content %}
   <!-- <section class="todoapp"> -->
     <header class="header">
       <h1>Im Next</h1>
-      <input class="new-todo" placeholder="What needs to be done?"
-        autofocus="" onkeypress="addItem(event)">
+        <form class="new-todo" method="post" action='/add'>
+          <input class="new-todo" type="text" id='add' name='add' placeholder="What needs to be done?" required>
+          <!-- <input type="submit" name="addButton" value="Add"> -->
+        </form>
     </header>
 
     <section class="main">
       <ul class="todo-list">
         {% for todo in todos %}
         <li class="{{ "completed" if todo['completed'] }}">
-          {{ todo['description'] }}
+        <input type="checkbox" name="" value="">
+        {{ todo['description'] }}
         </li>
       {% endfor %}
       </ul>

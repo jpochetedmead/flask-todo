@@ -8,7 +8,8 @@
 {% endblock %}
 
 {% block content %}
-<br>
+<!-- WE HAVE TO WORK ON THIS -->
+<h1>Edit Profile</h1>
   <form method="post">
     <label for="email">Email</label>
     <input name="email" id="email" required>
@@ -16,9 +17,6 @@
     <input type="password" name="password" id="password" minlength="8" required>
     <input type="submit" value="Log In">
   </form>
-  <br>
   <hr>
-  <br>
-  <a class="center" href="{{ url_for('todos.index') }}">Return to Home Page</a>
-  <br>
+  <a class="return-home" href="{{ url_for('todos.index') }}">Return to Home Page</a>
 {% endblock %}

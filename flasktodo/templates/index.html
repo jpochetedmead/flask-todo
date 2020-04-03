@@ -6,7 +6,8 @@
 
 {% block content %}
     <header class="header">
-      <h1>Im Next</h1>
+      <h1>ImNext</h1>
+      {% if g.user %}
         <form class="new-todo" method="post" action='/add'>
           <input class="new-todo" type="text" id='add' name='add' placeholder="What needs to be done?" required>
           <!-- <input type="submit" name="addButton" value="Add"> -->
@@ -19,6 +20,11 @@
       <button type="button" onclick="alert('Deleted!')">DELETE</button>
     </section>
 
+    <form method="post" action="/switch?id=1">
+      <input class="task-button" name="completed" type="submit" value="completed">
+    </form>
+
+
     <section class="main">
       <ul class="todo-list">
         {% for todo in todos %}
@@ -29,4 +35,11 @@
       {% endfor %}
       </ul>
     </section>
+    {% else %}
+    <section class="intro">
+      <p>ImNext is a simple To-Do application to help you stay organized and manage your day-to-day.
+        You can use this app to make shopping lists or task lists so that you can increase your productivity and focus on what matters to you.</p>
+    </section>
+    {% endif %}
+
 {% endblock %}

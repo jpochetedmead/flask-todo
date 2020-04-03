@@ -10,4 +10,4 @@
 - [ ] * As a user, I want to delete a task in case I don't need to do it anymore.
 - [ ] * As a user, I want to edit a task description so I can change what I already entered.
 - [X] As an anonymous user, I want to register with an email and password so that I can login.
-- [ ] As a logged in user, I want to see only my tasks to keep them private.
+- [ ] * As a logged in user, I want to see only my tasks to keep them private.

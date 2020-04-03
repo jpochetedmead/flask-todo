@@ -28,6 +28,14 @@ body {
 	padding: 1rem 2rem;
 }
 
+.intro {
+	background-color: darkorange;
+	color: white;
+	border-radius: 30px;
+	padding: 30px;
+	margin: 30px;
+}
+
 .top {
 	align-items: center;
 	background-color: darkorange;
